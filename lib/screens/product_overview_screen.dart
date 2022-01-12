@@ -3,6 +3,8 @@ import 'package:shop_app/models/product.dart';
 import 'package:shop_app/widgets/product_item.dart';
 import 'package:shop_app/widgets/custom_appbar_widget.dart';
 
+import 'data_adding_screen.dart';
+
 class ProductsOverviewScreen extends StatelessWidget {
   final List<Product> loadedProducts = [
     Product(
@@ -46,7 +48,11 @@ class ProductsOverviewScreen extends StatelessWidget {
         actions: [
           Container(
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return AddingData();
+                }));
+              },
               iconSize: 24,
               icon: Icon(Icons.add),
             ),
